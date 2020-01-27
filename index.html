@@ -1,0 +1,306 @@
+<html>
+	<head>
+		<style type="text/css">
+			
+			body{
+				margin: 0;
+				padding: 0;
+				background-color: black;
+				background-image: url(nieve.gif);
+				background-size: cover;
+				/*background-repeat: round;*/
+			}
+			#carga{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: black;
+				color: white;
+
+			}
+			.botonB{
+				background: white;
+				position: absolute;
+				top:15%;
+				left: 45%;
+				height: 35px;
+				width: 75px;
+				visibility: hidden;
+				z-index: 2;
+			}
+			#imagen1{
+				position: absolute;
+				top: 50px;
+				left: 450px;
+				width: 500px;
+				height: 550px;
+				background: url('kaiser1.png') no-repeat;
+				background-size: 100% 100%;
+				animation: cre1;
+				opacity: 0;
+				z-index: -10;
+			}	
+			#imagen2{
+				position: absolute;
+				top: 50px;
+				left: 450px;
+				width: 500px;
+				height: 550px;
+				background: url('kaiser1b.png') no-repeat;
+				background-size: 100% 100%;
+				animation: cre2;
+				opacity: 0;
+				z-index: -9;
+			}
+			#imagen3{
+				position: absolute;
+				top: 0;
+				left: 10%;
+				width: 1024px;
+				height: 704px;
+				background: url('tra1.jpg') no-repeat;
+				background-size: 100% 100%;
+				animation: cre2;
+				opacity: 0;
+				z-index: -8;
+			}			
+			#imagen4{
+				position: absolute;
+				top: 0;
+				left: 10%;
+				width: 1024px;
+				height: 704px;
+				background: url('tra2.jpg') no-repeat;
+				background-size: 100% 100%;
+				animation: cre2;
+				opacity: 0;
+				z-index: -7;
+			}			
+			#imagen5{
+				position: absolute;
+				top: 0;
+				left: 10%;
+				width: 1024px;
+				height: 704px;
+				background: url('tra3.jpg') no-repeat;
+				background-size: 100% 100%;
+				animation: cre2;
+				opacity: 0;
+				z-index: -6;
+			}			
+			#imagen6{
+				position: absolute;
+				top: 0;
+				left: 10%;
+				width: 1024px;
+				height: 704px;
+				background: url('tra4.jpg') no-repeat;
+				background-size: 100% 100%;
+				animation: cre2;
+				opacity: 0;
+				z-index: -5;
+			}			
+			#sello{
+				position: absolute;
+				top: 275px;
+				left: 500px;
+				width: 400px;
+				height: 300px;
+				background: url('sello.png') no-repeat;
+				background-size: 100% 100%;
+				animation: cre2;
+				opacity: 0;
+				z-index: -8;
+			}				
+		</style>
+		<script type="text/javascript">	
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.keyframes.js"></script>
+		<script type="text/javascript">
+
+			$(window).on( "load", function() {  
+					var contenedor = document.getElementById('carga');
+						$('.botonB').css({"visibility":"visible"});
+						$('.botonB').on('click', function(){
+
+					    	imagen1();
+							imagen2();
+							sello();
+							imagen3();
+							imagen4();
+							imagen5();
+							imagen6();
+
+							contenedor.style.visibility = 'hidden';
+							contenedor.style.opacity = 0;
+							$('.botonB').css({"visibility":"hidden"});
+					    $(".audio")[0].play();
+					    	//llamado  alas funciones
+					});
+				//llamado a las funciones
+
+				//funciones de keyframes
+				function imagen1(){
+					$('#imagen1').playKeyframe({
+					  name: 'cre1',
+					  duration: "12s",
+					  timingFunction: 'linear',
+					  iterationCount: '1',
+					  direction: 'normal',
+					  fillMode: 'forwards',
+					  delay: '0ms',
+					  
+					});
+				}
+				function imagen2(){
+					$('#imagen2').playKeyframe({
+					  name: 'cre2',
+					  duration: "0.2s",
+					  timingFunction: 'linear',
+					  iterationCount: '1',
+					  direction: 'normal',
+					  fillMode: 'forwards',
+					  delay: '12000ms',
+					  
+					});
+				}
+				function sello(){
+					$('#sello').playKeyframe({
+					  name: 'cre2',
+					  duration: "0.2s",
+					  timingFunction: 'linear',
+					  iterationCount: '1',
+					  direction: 'normal',
+					  fillMode: 'forwards',
+					  delay: '12000ms',
+					  
+					});
+				}
+				function imagen3(){
+					$('#imagen3').playKeyframe({
+					  name: 'cre2',
+					  duration: "0.2s",
+					  timingFunction: 'linear',
+					  iterationCount: '1',
+					  direction: 'normal',
+					  fillMode: 'forwards',
+					  delay: '19000ms',
+					  
+					});
+					//$('#sello').css({"opacity":"0"}).delay(18000);
+					//ocultamos las imagenes que ya se han visto justo cuando e muestre la siguiente
+					/*$('#imagen1').css({"opacity":"0"}).delay(18000);
+					$('#imagen2').css({"opacity":"0"}).delay(18000);
+					$('#sello').css({"opacity":"0"}).delay(18000);*/
+				}				
+
+				function imagen4(){
+					//ocultamos las imagenes que ya se han visto justo cuando e muestre la siguiente
+					/*$('#imagen3').css({"opacity":"0"}).delay(22000);*/
+					$('#imagen4').playKeyframe({
+					  name: 'cre2',
+					  duration: "0.2s",
+					  timingFunction: 'linear',
+					  iterationCount: '1',
+					  direction: 'normal',
+					  fillMode: 'forwards',
+					  delay: '22000ms',
+					  
+					});
+				}				
+				function imagen5(){
+					//ocultamos las imagenes que ya se han visto justo cuando e muestre la siguiente
+					/*$('#imagen4').css({"opacity":"0"}).delay(24000);*/
+					$('#imagen5').playKeyframe({
+					  name: 'cre2',
+					  duration: "0.2s",
+					  timingFunction: 'linear',
+					  iterationCount: '1',
+					  direction: 'normal',
+					  fillMode: 'forwards',
+					  delay: '24000ms',
+					  
+					});
+				}
+				function imagen6(){
+					//ocultamos las imagenes que ya se han visto justo cuando e muestre la siguiente
+					//$('#imagen5').css({"opacity":"0"}).delay(26000);
+					$('#imagen6').playKeyframe({
+					  name: 'cre2',
+					  duration: "0.2s",
+					  timingFunction: 'linear',
+					  iterationCount: '1',
+					  direction: 'normal',	
+					  fillMode: 'forwards',
+					  delay: '26000ms',
+					  
+					});
+				}				
+
+					//keyframe
+				$.keyframe.define([{
+				  name: 'cre1',
+				  '0%': {
+				    'opacity': '0'
+				  },
+				  '25%': {
+				    'opacity': '0.25'
+				  },
+				  '50%': {
+				    'opacity': '0.5'
+				  },
+				  '50%': {
+				    'opacity': '0.75'
+				  },
+				  '100%': {
+				    'opacity': '1'
+				  }
+				}, {
+				  name: 'cre2',
+				  '0%': {
+				    'opacity': '0'
+				  },
+				  '100%': {
+				    'opacity': '1'
+				  }
+				}, {
+				  name: 'ocultar',
+				  '0%': {
+				    'opacity': '0'
+				  },
+				  '100%': {
+				    'opacity': '0'
+				  }
+				   
+				}]);	
+			});
+
+		</script>
+
+	</head>
+	<body>
+		<div id="carga">
+			cargando
+		</div>
+		<button class="botonB">INICIAR</button>
+		<audio  class="audio">
+			<source src="demon.mp3" type="audio/mp3" >
+
+		</audio>
+		<div>
+			contenido
+			imagenes:
+			
+			<div id="imagen1"></div>
+			<div id="imagen2"></div>
+			<div id="sello"></div>
+			<div id="imagen3"></div>
+			<div id="imagen4"></div>
+			<div id="imagen5"></div>
+			<div id="imagen6"></div>
+		</div>
+	</body>
+</html>
